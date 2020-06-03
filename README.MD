@@ -1,6 +1,6 @@
 # Sta je ovo?
 
-Mali sajt uradjen U C# MVC da prati istoriju racunjanja bruto iznosa
+Mali sajt uradjen U C# MVC da prati istoriju racunanja bruto iznosa
 
 # Potrebno
  - MSSQL
