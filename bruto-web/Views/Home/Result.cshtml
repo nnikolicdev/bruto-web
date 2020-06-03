@@ -1,0 +1,28 @@
+﻿@model CombinedModel
+
+
+
+    <div class="bg-light box-shadow shadow-lg text-center p-2">
+
+        <h1>Rezultat</h1>
+
+        <div class="d-flex flex-column">
+            <span>Fod Pio @Model.viewModel.PIO dinara</span>
+            <span>Zdravstveno osiguranje @Model.viewModel.ZO dinara</span>
+            <span>Osiguranje od nezaposlenosti @Model.viewModel.ODN dinara</span>
+            <span>Ukupno @Model.viewModel.Total</span>
+        </div>
+
+        <h3>Vas bruto je @Model.viewModel.Bruto dinara</h3>
+        <h3>Vas Neto je @Model.viewModel.Neto dinara</h3>
+
+        <a asp-controller="Home" asp-action="Index">
+            <button type="submit" class="btn btn-primary">Vrati se na pocetnu stranicu</button>
+        </a>
+
+        <a asp-controller="Home" asp-action="BrutoIndex">
+            <button type="button" class="btn btn-primary">Izracunaj sledeci bruto</button>
+        </a>
+
+    </div>
+

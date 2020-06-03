@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewData["title"] = "Bruto";
+}
+
+
+@model CombinedModel
+
+<div class="d-flex flex-column flex-grow">
+
+    <h1 class="mb-3">Vasi prosli obracuni</h1>
+
+    @if (Model.user.models == null || Model.user.models.Count <= 0)
+    {
+        <span class="text-muted">Nepostoje prosli obracuni mozes ih dodati <a asp-controller="Home" asp-action="BrutoIndex">ovde</a></span>
+    }
+    else
+    {
+        <div class="table-responsive-xl">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Neto</th>
+                        <th scope="col">Bruto</th>
+                        <th scope="col">Datum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.user.models)
+                    {
+                        <tr>
+                            <td>@item.Neto</td>
+                            <td>@item.Bruto</td>
+                            <td>@item.Date</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+
+
+
+
+</div>
+
+
