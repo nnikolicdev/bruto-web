@@ -164,7 +164,7 @@ namespace bruto_web.Controllers
         // 5.15% Zdravstveno osiguranje
         private const double _zo = 0.0515;
         // 0.75 Osiguranje od nezaposlenosti
-        private const double _odn = 0.075;
+        private const double _odn = 0.0075;
 
         // (~10%) Porez na zareda 
         private const double _porez = 0.1;
