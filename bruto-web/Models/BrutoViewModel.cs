@@ -18,16 +18,26 @@ namespace bruto_web.Models
         // Osiguranje od nezaposlenosti
         public int ODN { get; set; }
 
+        public int Tax { get; set; }
+
         public int Total { get; set; }
 
-        public BrutoViewModel(int neto, int bruto, double pio, double zo, double odn) 
+        public BrutoViewModel(
+            int neto,
+            int bruto, 
+            double pio, 
+            double zo, 
+            double odn,
+            double porez,
+            int total) 
         {
             Neto = neto;
             Bruto = bruto;
             PIO = (int) Math.Round(pio);
             ZO = (int) Math.Round(zo);
             ODN = (int) Math.Round(odn);
-            Total = PIO + ZO + ODN;
+            Tax = (int) Math.Round(porez);
+            Total = total;
         }
 
     }

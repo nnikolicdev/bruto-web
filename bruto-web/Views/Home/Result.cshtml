@@ -7,6 +7,7 @@
         <h1>Rezultat</h1>
 
         <div class="d-flex flex-column">
+            <span>Porez na zaradu @Model.viewModel.Tax dinara</span>
             <span>Fod Pio @Model.viewModel.PIO dinara</span>
             <span>Zdravstveno osiguranje @Model.viewModel.ZO dinara</span>
             <span>Osiguranje od nezaposlenosti @Model.viewModel.ODN dinara</span>
@@ -14,7 +15,6 @@
         </div>
 
         <h3>Vas bruto je @Model.viewModel.Bruto dinara</h3>
-        <h3>Vas Neto je @Model.viewModel.Neto dinara</h3>
 
         <a asp-controller="Home" asp-action="Index">
             <button type="submit" class="btn btn-primary">Vrati se na pocetnu stranicu</button>
