@@ -22,6 +22,8 @@ namespace bruto_web.Models
 
         public int Total { get; set; }
 
+        public int WithoutTax { get; set; }
+
         public BrutoViewModel(
             int neto,
             int bruto, 
@@ -38,6 +40,7 @@ namespace bruto_web.Models
             ODN = (int) Math.Round(odn);
             Tax = (int) Math.Round(porez);
             Total = total;
+            WithoutTax = total - Tax;
         }
 
     }

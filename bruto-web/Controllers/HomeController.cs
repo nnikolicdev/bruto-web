@@ -156,17 +156,18 @@ namespace bruto_web.Controllers
 
         // Za kalkulaciju cu koristiti ove 3 promenljive konstante
 
-        // Dosta varira ovo od formula kojih sam nalazio, ali ovo bi trebalo da popravi predhodnu kalkulaciju
+        // Na ovo
+        private const double _bruto = 0.701;
 
-        // 19% (14%) Fod PIO
-        private const double _pio = 0.195;
-        // 5~7% Zdravstveno osiguranje
-        private const double _zo = 0.07106;
-        // 0.75~1% Osiguranje od nezaposlenosti
-        private const double _odn = 0.01034;
+        // 14% Fod PIO
+        private const double _pio = 0.14;
+        // 5.15% Zdravstveno osiguranje
+        private const double _zo = 0.0515;
+        // 0.75 Osiguranje od nezaposlenosti
+        private const double _odn = 0.075;
 
         // (~10%) Porez na zareda 
-        private const double _porez = 0.10;
+        private const double _porez = 0.1;
         #endregion
 
         public IActionResult BrutoIndex()
@@ -191,12 +192,15 @@ namespace bruto_web.Controllers
 
             if (ModelState.IsValid)
             {
+                
                 int neto = brutoModel.Neto;
 
-                double pioCalc = neto * _pio;
-                double zoCalc = neto * _zo;
-                double odnCalc = neto * _odn;
-                double porezCalc = neto * _porez;
+                double brutoJedan = neto / _bruto;
+
+                double pioCalc = brutoJedan * _pio;
+                double zoCalc = brutoJedan * _zo;
+                double odnCalc = brutoJedan * _odn;
+                double porezCalc = brutoJedan * _porez;
 
                 // Sve zajedno = bruto
                 int bruto = (int)Math.Round(pioCalc + zoCalc + odnCalc + neto + porezCalc);
